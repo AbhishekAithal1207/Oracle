@@ -29,10 +29,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Prepare HTML for deployment
+      - name: Prepare site for deployment
         run: |
           mkdir -p _site
-          cp blogs/oct26/semantic_search_fdi_linkedin_blog.html _site/index.html
+          cp index.html _site/
+          cp -r blogs _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
